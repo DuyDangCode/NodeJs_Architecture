@@ -6,10 +6,9 @@ const envinfo = require("envinfo");
 const path = require("path");
 const fs = require("fs-extra");
 const os = require("os");
-const { Console } = require("console");
 const spawn = require("cross-spawn");
 
-let projectName;
+let projectName = "project";
 
 function init() {
   const program = new commander.Command(packageJson.name)
@@ -134,6 +133,4 @@ function installPackages(dependencies) {
   });
 }
 
-module.exports = {
-  init,
-};
+module.exports.init = init;
